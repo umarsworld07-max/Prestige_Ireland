@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Business Website</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      color: #333;
+    }
+
+    header {
+      background: #1e293b;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #0f172a;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 15px 20px;
+      display: block;
+    }
+
+    nav a:hover {
+      background: #1e293b;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 80px 20px;
+      background: linear-gradient(to right, #3b82f6, #06b6d4);
+      color: white;
+    }
+
+    .hero h2 {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+
+    .sale-banner {
+      font-size: 28px;
+      font-weight: bold;
+      color: #dc2626;
+      animation: flash 1s infinite alternate;
+    }
+
+    @keyframes flash {
+      from { opacity: 1; transform: scale(1); }
+      to { opacity: 0.4; transform: scale(1.1); }
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 40px;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      margin: 10px 0;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #0f172a;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>My Business</h1>
+    <p>Your tagline goes here</p>
+  </header>
+
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Products</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+  </nav>
+
+  <section class="hero">
+    <h2>Welcome to Our Store</h2>
+    <p class="sale-banner">🔥 SALE NOW - Up to 50% OFF 🔥</p>
+  </section>
+
+  <section class="products">
+    <div class="card">
+      <img src="https://via.placeholder.com/250x150" alt="Product 1">
+      <h3>Product 1</h3>
+      <p>$19.99</p>
+    </div>
+    <div class="card">
+      <img src="https://via.placeholder.com/250x150" alt="Product 2">
+      <h3>Product 2</h3>
+      <p>$29.99</p>
+    </div>
+    <div class="card">
+      <img src="https://via.placeholder.com/250x150" alt="Product 3">
+      <h3>Product 3</h3>
+      <p>$39.99</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 My Business. All rights reserved.</p>
+  </footer>
+</body>
+</html>
