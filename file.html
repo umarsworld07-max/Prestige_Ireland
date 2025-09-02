@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Summer Sale</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .hero {
+      height: 100vh;
+      background: url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e") center/cover no-repeat;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      color: white;
+      position: relative;
+    }
+
+    .sale-box {
+      background: rgba(0,0,0,0.6);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(255,0,0,0.6);
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 20px rgba(255,0,0,0.7); transform: scale(1); }
+      50% { box-shadow: 0 0 40px rgba(255,0,0,1); transform: scale(1.05); }
+      100% { box-shadow: 0 0 20px rgba(255,0,0,0.7); transform: scale(1); }
+    }
+
+    .sale-box h1 {
+      font-size: 60px;
+      margin: 0;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .timer {
+      font-size: 28px;
+      margin: 20px 0;
+      font-weight: 600;
+      color: #ffcc00;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 15px 40px;
+      background: #ff0000;
+      color: white;
+      text-decoration: none;
+      font-size: 20px;
+      border-radius: 50px;
+      transition: all 0.3s ease;
+      animation: bounce 2s infinite;
+    }
+
+    .btn:hover {
+      background: #cc0000;
+      transform: scale(1.1);
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <div class="sale-box">
+      <h1>SALE NOW</h1>
+      <div class="timer" id="timer">00d : 00h : 00m : 00s</div>
+      <a href="#" class="btn">SHOP NOW</a>
+    </div>
+  </div>
+
+  <script>
+    // Countdown Timer (set your end date)
+    const endDate = new Date("September 30, 2025 23:59:59").getTime();
+
+    const timer = document.getElementById("timer");
+
+    setInterval(function() {
+      const now = new Date().getTime();
+      const distance = endDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      if (distance > 0) {
+        timer.innerHTML = `${days}d : ${hours}h : ${minutes}m : ${seconds}s`;
+      } else {
+        timer.innerHTML = "SALE ENDED";
+      }
+    }, 1000);
+  </script>
+</body>
+</html>
